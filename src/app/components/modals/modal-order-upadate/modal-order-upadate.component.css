@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", serif;
+
+}
+
+.modal_conteiner {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_header {
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    line-height: 0;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.conteiner_form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 90%;
+}
+
+.modal_header p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form_group label {
+    display: block;
+    margin-bottom: 5px;
+    align-self: flex-start;
+}
+
+input {
+    background-color: #EDF0F2;
+    border: 1px solid #8F8F8F;
+    border-radius: 5px;
+    width: 440px;
+    height: 50px;
+    padding: 0 10px;
+    font-family: "Inter", serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+select {
+    background-color: #EDF0F2;
+    border: 1px solid #8F8F8F;
+    border-radius: 5px;
+    width: 460px;
+    height: 50px;
+    padding: 0 10px;
+    font-family: "Inter", serif;
+    font-size: 14px;
+    transition: border-color 0.3s
+}
+
+input:focus,
+select:focus {
+    border-color: #4D4D4D;
+    outline: none;
+}
+
+.conteiner_itens_list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.itens_list {
+  width: 90%;
+}
+
+.itens_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.itens_list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.itens_list li:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex: 2;
+    font-weight: bold;
+}
+
+.item-quantity {
+    flex: 1;
+    text-align: center;
+}
+
+.item-type {
+    flex: 1;
+    text-align: right;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+    width: 100%;
+    gap: 10px;
+}
+
+.buttons button {
+    width: 20%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.discard_button {
+    background-color: lightgray;
+}
+
+._update_order_button {
+    background-color: green;
+    color: white;
+}
+
+.delete_order_button {
+    background-color: red;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}

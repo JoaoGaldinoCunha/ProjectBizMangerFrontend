@@ -1,0 +1,49 @@
+<section class="modal" [ngStyle]="{'display': display}">
+    <div class="modal_conteiner">
+
+        <div class="modal_content">
+
+            <div class="modal_header">
+                <h2>Adicionar Novo Estoque</h2>
+            </div>
+
+            <div class="conteiner_form">
+
+                <div class="form_group">
+                    <label for="nome_estoque">Nome do Estoque</label>
+                    <input type="text" id="nome_estoque" placeholder="Digite o nome do estoque"
+                        [(ngModel)]="nomeEstoque">
+                </div>
+
+                <div class="form_group">
+                    <label for="responsavel">Responsável pelo Estoque</label>
+                    <select id="tipo_estoque" [(ngModel)]="responsavelId">
+                        <option *ngFor="let employee of EmployeesData" [ngValue]="employee.id">{{employee.name}}</option>                    </select>
+                </div>
+
+                <div class="form_group">
+                    <label for="capacidade_maxima">Capacidade Máxima</label>
+                    <input type="number" id="capacidade_maxima" placeholder="Digite a capacidade máxima"
+                        [(ngModel)]="capacidadeMaxima">
+                </div>
+                <div class="form_group">
+                    <label for="tipo_estoque">Tipo de Estoque</label>
+                    <select id="tipo_estoque" [(ngModel)]="tipoEstoque">
+                        <option *ngFor="let option of stockTypes" [value]="option">{{option}}</option>
+                    </select>
+                </div>
+
+                <div class="form_group">
+                    <label for="data_criacao">Data de Criação</label>
+                    <input type="date" id="data_criacao" placeholder="Digite a data de criação"
+                        [(ngModel)]="dataCriacao">
+                </div>
+
+            </div>
+            <div class="buttons">
+                <button class="discard_button" (click)="closeModal()">Descartar</button>
+                <button class="add_stock_button" (click)="addStock()">Adicionar Estoque</button>
+            </div>
+        </div>
+    </div>
+</section>

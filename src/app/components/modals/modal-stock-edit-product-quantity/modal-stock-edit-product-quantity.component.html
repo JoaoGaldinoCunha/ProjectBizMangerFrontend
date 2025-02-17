@@ -1,0 +1,22 @@
+<section class="modal" [ngStyle]="{'display': display}">
+  <div class="modal_conteiner">
+    <div class="modal_content">
+      <div class="modal_header">
+        <h2>Editar quantidade produto</h2>
+        <p>Produto: {{dataProduct.productName}}</p>
+      </div>
+
+      <div class="conteiner_form">
+        <div class="form_group">
+          <label for="quantidade">Quantidade</label>
+          <input type="number" min="10" id="quantidade" placeholder="Digite a quantidade" [(ngModel)]="quantidade">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="discard_button" (click)="closeModal()">Descartar</button>
+        <button class="edit_product_button" (click)="editQuantityProduct()">Editar Produto</button>
+      </div>
+    </div>
+  </div>
+</section>

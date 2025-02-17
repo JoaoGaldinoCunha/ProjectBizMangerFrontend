@@ -1,0 +1,54 @@
+<section>
+    <h1 class="title">Alertas</h1>
+    <div class="general_content">
+      <div class="container">
+        <h1>Alerta de Estoque</h1>
+        <div class="divider"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID do Pedido</th>
+              <th>Nome do Produto</th>
+              <th>Quantidade</th>
+              <th>Tipo do produto</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of lowQuantityProducts">
+              <td>{{ product.productId }}</td>
+              <td>{{ product.productName }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.productCategory }}</td>
+              <td>{{ product.stockVolume }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+      <div class="container_selling_produts">
+        <h1>Produtos Mais Vendidos</h1>
+        <div class="divider"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID do Produto</th>
+              <th>Nome</th>
+              <th>Vendas</th>
+              <th>Quantidade em Estoque</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of mostOrderedProducts">
+              <td>{{ product.productId }}</td>
+              <td>{{ product.productName }}</td>
+              <td>{{ product.totalOrdered }}</td>
+              <td>{{ product.quantityInStock }}</td>
+              <td>{{ product.status }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>

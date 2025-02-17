@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+section {
+    font-family: "Inter", sans-serif;
+}
+
+.container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.header h1 {
+    font-size: 28px;
+}
+
+.header div {
+    display: flex;
+    gap: 20px;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 60px;
+    font-size: 18px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.update_status {
+    background-color: transparent;
+    color: #4CAF50;
+}
+
+.new_order {
+    gap: 10px;
+    background-color: #103E13;
+    color: white;
+}
+
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+    width: 15%;
+}
+
+.search_bar input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
+}
+
+.search_bar input:focus {
+    outline: none;
+}
+
+.search_bar i {
+    margin-right: 10px;
+    color: #302b2b;
+    cursor: pointer;
+}
+
+.search_bar i:hover,
+.search_bar input:hover {
+    cursor: text;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.status_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-style: none;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.status_button.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status_button.pending:hover {
+    background-color: #ffeb3b; 
+    color: #856404;
+}
+
+.status_button.denied {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status_button.denied:hover {
+    background-color: #f5c6cb;
+    color: #721c24;
+}
+
+.status_button.completed {
+    background-color: #2c8d23;
+    color: #155724;
+}
+
+.status_button.completed:hover {
+    background-color: #2c8d23;
+    color: #155724;
+}
+
+.status_button.delivered {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.status_button.delivered:hover {
+    background-color: #bee5eb;
+    color: #0c5460;
+}

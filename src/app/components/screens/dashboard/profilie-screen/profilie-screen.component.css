@@ -1,0 +1,102 @@
+
+section {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 40%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container h2 {
+    margin-top: 5;
+    color: #333333;
+    text-align: center;
+    width: 100%;
+}
+.form-group {
+    width: 80%; 
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group label {
+    margin-bottom: 5px;
+    color: #666666;
+    text-align: left;
+    width: 100%;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteiner_inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.conteiner_input{
+    display: flex;
+    gap:5px;
+    flex-direction: column;
+    align-items: start;
+}
+
+label {
+    font-size: 15px;
+    font-family: "Inter", serif;
+    color: #4D4D4D;
+    font-weight: bold;
+}
+
+input {
+    background-color: #EDF0F2;
+    border: 1px solid #8F8F8F;
+    border-radius: 5px;
+    width: 440px;
+    height: 50px;
+    padding: 0 10px;
+    font-family: "Inter", serif;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #4D4D4D; 
+    outline: none;
+}
+
+.buttons {
+    
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+}
+.buttons button {
+    width: 35%;
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+.buttons .discard {
+    background-color: #f44336;
+    color: #ffffff;
+}
+.buttons .add {
+    background-color: #4caf50;
+    color: #ffffff;
+}

@@ -1,0 +1,42 @@
+<section>
+  <div class="container">
+    <div class="header">
+      <h1>Pedidos de retirada</h1>
+      <div>
+        <button class="new_order" (click)="openNewOrderModal()"><i class="fas fa-plus"></i> Novo Pedido</button>
+      </div>
+    </div>
+    <div class="search_bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search by order ID" [(ngModel)]="id" (input)="loadDataAllOrdersById()">
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Data</th>
+          <th>Cliente</th>
+          <th>Destino</th>
+          <th>Itens</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orders of dataAllOrders">
+          <td>{{orders.orderId}}</td>
+          <td>{{orders.createdAt}}</td>
+          <td>{{orders.clientCnpj}}</td>
+          <td>{{orders.destination}}</td>
+          <td>{{orders.productQuantityItems}}</td>
+          <td>
+            <button (click)="openUpdateOrderModal(orders.orderId)" [ngClass]="getButtonClass(orders.status)">
+              <i class="fas fa-edit"></i>{{orders.status}}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-modal-order-withdrawal></app-modal-order-withdrawal>
+  <app-modal-order-upadate></app-modal-order-upadate>
+</section>

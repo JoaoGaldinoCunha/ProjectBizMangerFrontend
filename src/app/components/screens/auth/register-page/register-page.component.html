@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<section class="section-container">
+    <div class="general_container">
+
+        <div class="conteiner_text">
+            <div class="back_arrow" (click)="RedirectToLandingPage()">
+                <i class="fas fa-arrow-left"></i>
+                <p (click)="RedirectToLandingPage()">Voltar</p>
+            </div>
+
+            <div class="titles">
+                <h1>Registre</h1>
+                <p>Gerencie seu inventario com eficiência!</p>
+            </div>
+            <div class="form">
+                <div class="inputs">
+                    <div class="conteiner_inputs">
+                        <div class="conteiner_input">
+                            <label>Email:</label>
+                            <input [(ngModel)]="email" type="text" placeholder="Email">
+                        </div>
+                        <div class="conteiner_input">
+                            <label>Senha:</label>
+                            <input [(ngModel)]="password" type="password" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="conteiner_inputs">
+                        <div class="conteiner_input">
+                            <label>Nome da empresa:</label>
+                            <input [(ngModel)]="nameCompany" type="text" placeholder="Nome da empresa">
+                        </div>
+                        <div class="conteiner_input">
+                            <label>Número de telefone:</label>
+                            <input [(ngModel)]="phone" (input)="maskPhone()" type="text"
+                                placeholder="Número de telefone" maxlength="15" minlength="15">
+                        </div>
+                    </div>
+                    <div class="conteiner_inputs">
+                        <div class="conteiner_input">
+                            <label>CNPJ:</label>
+                            <input [(ngModel)]="cnpj" (input)="maskCnpj()" type="text" placeholder="CNPJ" minlength="18"
+                                maxlength="18">
+                        </div>
+                        <div class="conteiner_input">
+                            <label>CEP:</label>
+                            <input [(ngModel)]="cep" (input)="maskCep()" type="text" placeholder="CEP" maxlength="9">
+                        </div>
+                   
+                    </div>
+                    <div class="conteiner_inputs">
+                        <div class="conteiner_input">
+                            <label>Número da empresa:</label>
+                            <input [(ngModel)]="number" type="text" placeholder="Número da empresa">
+                        </div>
+                        <div class="conteiner_input">
+                            <label>Complemento:</label>
+                            <input [(ngModel)]="complement" type="text" placeholder="Complemento">
+                        </div>
+                    </div>
+                </div>
+                <div class="button_and_not">
+                    <app-button [size]="'medium_large'" [text]="'Entre'" (clickEvent)="onRegister()"></app-button>
+                    <p>Cadastrado? <span (click)="RedirectToLogin()">Entre com sua conta!</span> </p>
+                </div>
+            </div>
+        </div>
+        <img src="../../../../../assets/images/login_and_register/login_image.svg" alt="">
+    </div>
+</section>

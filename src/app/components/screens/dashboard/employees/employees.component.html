@@ -1,0 +1,35 @@
+
+    <div class="container">
+        <div class="header">
+            <h1>FUNCIONÁRIOS</h1>
+            <button class="new_employees" (click)="openNewEmployeeModal()"><i class="fas fa-plus"></i> Adicionar novo funcionário</button>
+        </div>
+
+        <div class="search_bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search by name" [(ngModel)]="name" (input)="loadDataAllEmployeesByNameId()">        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Função</th>
+                    <th>Email</th>
+                    <th>Data de anivesário</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of dataAllEmployees">
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.role.name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.birthDate}}</td>
+                    <td><button class="edit-button" (click)="openEditEmployeeModal(employee.id)">EDITAR</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+        <app-modal-add-new-employee></app-modal-add-new-employee>
+        <app-modal-edit-employee></app-modal-edit-employee>
+    </div>
+

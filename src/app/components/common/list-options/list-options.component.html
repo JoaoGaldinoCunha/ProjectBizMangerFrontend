@@ -1,0 +1,38 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+<aside>
+    <div>
+        <ul>
+            <li>
+                <a [routerLink]="'/dashboard/alertas'">
+                    <i class="fas fa-bell"></i>
+                    <span>Alertas</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="'/dashboard/estoque'">
+                    <i class="fas fa-box"></i>
+                    <span>Estoque</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="'/dashboard/pedidos'">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Pedidos</span>
+                </a>
+            </li>
+            <li *ngIf="tipoUsuario=='Admin'">
+                <a   [routerLink]="'/dashboard/funcionarios'">
+                    <i class="fas fa-users"></i>
+                    <span>Servidores</span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="'/dashboard/perfil'">
+                    <i class="fas fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>

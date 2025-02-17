@@ -1,0 +1,41 @@
+<section class="modal" [ngStyle]="{'display': display}">
+    <div class="modal_conteiner">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h2>Editar Pedido de Retirada</h2>
+                <p>Cliente: {{ AllDataOrder.length ? AllDataOrder[0].clientCnpj : '' }}</p>
+                <p>Número do pedido: {{ AllDataOrder.length ? AllDataOrder[0].orderId : '' }}</p>
+            </div>
+
+            <div class="conteiner_form">
+                <div class="form_group">
+                    <label for="status">Status</label>
+                    <select id="status" [(ngModel)]="status">
+                        <option *ngFor="let option of listStatusOptions" [value]="option">{{ option }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="conteiner_itens_list">
+                <div class="itens_list_header">
+                    <h3>Itens do pedido:</h3>
+                </div>
+                <div class="itens_list">
+                    <ul>
+                        <li *ngFor="let item of AllDataOrder">
+                            <span class="item-name">{{ item.productName }}</span>
+                            <span class="item-quantity">Quantidade: {{ item.productQuantity }}</span>
+                            <span class="item-type">Categoria: {{ item.productCategory }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="discard_button" (click)="closeModal()">Sair</button>
+                <button class="_update_order_button" (click)="updateOrder()">Atualizar status do pedido</button>
+                <button class="delete_order_button" (click)="deleteOrder()">Deletar pedido</button>
+            </div>
+        </div>
+    </div>
+</section>

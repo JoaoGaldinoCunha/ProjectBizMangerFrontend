@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<section class="section-container">
+    <div class="general_container">
+
+        <div class="conteiner_text">
+                <div class="back_arrow" (click)="RedirectToLandingPage()">
+                    <i class="fas fa-arrow-left"></i>
+                    <p >Voltar</p>
+                </div>
+
+            <div class="titles">
+                <h1>Entrar</h1>
+                <p>Monitore seu estoque com facilidade e obtenha análises detalhadas!</p>
+            </div>
+            <div class="form">
+                <div class="inputs">
+                    <div class="conteiner_input">
+                        <label>Email:</label>
+                        <input type="email" placeholder="Email" [(ngModel)]="email">
+                      </div>
+                      <div class="conteiner_input">
+                        <label>Senha:</label>
+                        <input type="password" placeholder="Senha" [(ngModel)]="password">
+                      </div>
+                </div>
+                <div class="button_and_not">
+                    <app-button [size]="'medium_large'" [text]="'Entre'"(clickEvent)="onLogin()"></app-button>
+                    <p>Não é cadastrado? <span (click)="RedirectToRegistry()">Crie sua conta!</span> </p>
+                </div>
+            </div>
+        </div>
+        <img src="../../../../../assets/images/login_and_register/login_image.svg" alt="">
+    </div>
+</section>

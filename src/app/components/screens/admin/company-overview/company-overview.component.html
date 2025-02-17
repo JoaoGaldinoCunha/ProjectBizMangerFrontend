@@ -1,0 +1,109 @@
+<section class="company_overview">
+    <div class="header">
+        <p>COMPANY</p>
+    </div>
+    <div class="general_content">
+        <div class="conteiner_buttons">
+            <button class="btn_edit_delete_add" (click)="openEditCompanyModal()">Editar Dados</button>
+            <button class="btn_edit_delete_add" (click)="openNewEmployeeModal()">Adicionar Fúncionario</button>
+            <button class="btn_edit_delete_add" (click)="deleteCompany()">Apagar Empresa</button>
+        </div>
+        <div class="coiteiner_cards">
+            <div class="left_content">
+                <div class="container">
+                    <h1>Orders</h1>
+                    <div class="divider"></div>
+                    <div class="scrollable-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Data</th>
+                                    <th>Cliente</th>
+                                    <th>Destino</th>
+                                    <th>Itens</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let orders of dataAllOrders">
+                                    <td>{{orders.orderId}}</td>
+                                    <td>{{orders.createdAt}}</td>
+                                    <td>{{orders.clientCnpj}}</td>
+                                    <td>{{orders.destination}}</td>
+                                    <td>{{orders.productQuantityItems}}</td>
+                                    <td class="buttons_table">
+                                        <button (click)="deleteOrder(orders.orderId)" class="btn_table delete">Apagar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="container">
+                    <h1>Estoque</h1>
+                    <div class="divider"></div>
+                    <div class="scrollable-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID do Estoque</th>
+                                    <th>Nome</th>
+                                    <th>Capacidade maxima</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let stock of dataAllStocks">
+                                    <td>{{stock.id}}</td>
+                                    <td>{{stock.name}}</td>
+                                    <td>{{stock.maxCapacity}}</td>
+                                    <td class="buttons_table">
+                                        <button class="btn_table" (click)="openEditStockeModal(stock.id)">Editar</button>
+                                        <button class="btn_table delete" (click)="deleteStock(stock.id)">Apagar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="right_content">
+                <div class="container_employees">
+                    <h1>Lista de funcionários</h1>
+                    <div class="divider"></div>
+                    <div class="scrollable-table-employees">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID do Func.</th>
+                                    <th>Data Nasc.</th>
+                                    <th>Email</th>
+                                    <th>Nome</th>
+                                    <th>Função</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let employee of dataAllEmployees">
+                                    <td>{{employee.id}}</td>
+                                    <td>{{employee.birthDate}}</td>
+                                    <td>{{employee.email}}</td>
+                                    <td>{{employee.name}}</td>
+                                    <td>{{employee.role.name}}</td>
+                                    <td class="buttons_table">
+                                        <button class="btn_table" (click)="openEditEmployeeModal(employee.id)">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-modal-edit-employee></app-modal-edit-employee>
+<app-modal-edit-stock></app-modal-edit-stock>
+<app-modal-edit-company></app-modal-edit-company>
+<app-modal-add-new-employee></app-modal-add-new-employee>

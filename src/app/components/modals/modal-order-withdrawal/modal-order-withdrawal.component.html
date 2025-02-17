@@ -1,0 +1,51 @@
+<section class="modal" [ngStyle]="{'display': display}">
+  <div class="modal_conteiner">
+    <div class="modal_content">
+      <div class="modal_header">
+        <h2>Novo Pedido de Retirada</h2>
+      </div>
+
+      <div class="conteiner_form">
+        <div class="form_group">
+          <label for="responsavel">Responsável</label>
+          <select [(ngModel)]="responsavel">
+            <option *ngFor="let employee of dataAllEmployees" [ngValue]="employee.id">{{employee.name}}</option>
+          </select>
+        </div>
+        <div class="form_group">
+          <label for="cnpj">CNPJ do cliente</label>
+          <input type="text" id="cnpj" placeholder="Digite o CNPJ" [(ngModel)]="cnpj">
+        </div>
+        <div class="form_group">
+          <label for="destino">Destino</label>
+          <input type="text" id="destino" placeholder="Digite o destino" [(ngModel)]="destino">
+        </div>
+        
+        <div id="items_container">
+          <div *ngFor="let item of items; let i = index">
+            <div class="form_group">
+              <label for="items">Produtos</label>
+              <select [id]="'items'+i" [(ngModel)]="item.productId">
+                <option *ngFor="let option of dataAllProducts" [ngValue]="option.productId">{{option.productName}}</option>
+              </select>
+            </div>
+            <div class="form_group">
+              <label for="quantidade">Quantidade</label>
+              <input type="number" min="0" [id]="'quantidade'+i" placeholder="Digite a quantidade" [(ngModel)]="item.quantity">
+            </div>
+          </div>
+        </div>
+
+        <div class="conteiner_add_and_remove_button">
+          <span class="remove_button" *ngIf="items.length > 1" (click)="removeLastItem()">&#8722;</span>
+          <span class="add_button" (click)="addItem()">&#43;</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="discard_button" (click)="closeModal()">Descartar</button>
+        <button class="add_product_button" (click)="addProduct()">Adicionar Produto</button>
+      </div>
+    </div>
+  </div>
+</section>

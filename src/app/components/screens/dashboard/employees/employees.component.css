@@ -1,0 +1,105 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    color: #4CAF50;
+}
+
+.header button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 15%;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.new_employees {
+    font-size: 18px;
+}
+
+.search_bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 2px solid #D9D9D9;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: transparent;
+    width: 15%;
+}
+
+.search_bar input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
+}
+
+.search_bar input:focus {
+    outline: none;
+}
+
+.search_bar i {
+    margin-right: 10px;
+    color: #302b2b;
+    cursor: pointer;
+}
+
+.search_bar i:hover,
+.search_bar input:hover {
+    cursor: text;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

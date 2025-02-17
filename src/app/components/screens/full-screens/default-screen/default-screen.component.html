@@ -1,0 +1,17 @@
+<section class="default_screen">
+    <section>
+        <div class="header">
+            <h1>Olá!</h1>
+            <h1 class="logout" (click)="logout()">
+                Sair <i class="fas fa-arrow-right"></i>
+            </h1>
+        </div>
+
+        <div class="general_content">
+            <app-list-options></app-list-options>
+            <div class="content">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </section>
+</section>

@@ -1,0 +1,37 @@
+<section class="modal" [ngStyle]="{'display': display}">
+    <div class="modal_conteiner">
+        <div class="modal_content">
+            <div class="modal_header">
+                <h2>Detalhes do Produto</h2>
+            </div>
+            <div class="conteiner_form">
+                <div class="form_group">
+                    <label for="nome_produto">Nome do Produto</label>
+                    <input type="text" id="nome_produto" placeholder="Digite o nome do produto" [(ngModel)]="nomeProduto">
+                </div>
+                <div class="form_group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Digite a descrição" [(ngModel)]="descricao">
+                </div>
+                <div class="form_group">
+                    <label for="categoria">Categoria</label>
+                    <input type="text" id="categoria" placeholder="Digite a categoria" [(ngModel)]="categoria">
+                </div>
+                <div class="form_group">
+                    <label for="preco_compra">Preço de Compra</label>
+                    <input type="text" id="preco_compra" placeholder="Digite o preço de compra" [(ngModel)]="precoCompra">
+                </div>
+                <div class="form_group">
+                    <label for="data_validade">Data de Validade</label>
+                    <input type="date" id="data_validade" placeholder="Digite a data de validade" [(ngModel)]="dataValidade">
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="discard_button" (click)="closeModal()">Descartar</button>
+                <button class="edit_product_button" (click)="editProduct()">Editar Produto</button>
+                <button class="delete_product_button" (click)="deleteProduct()">Apagar Produto</button>
+
+            </div>
+        </div>
+    </div>
+</section>

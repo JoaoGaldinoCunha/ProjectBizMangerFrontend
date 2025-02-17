@@ -1,0 +1,18 @@
+<header class="header">
+    <div class="Logo">
+        <h1>BizManager</h1>
+    </div>
+    <div class="nav_and_buttons">
+        <ul class="nav_bar_menu">
+            <li>Ínicio</li>
+            <li>Valores</li>
+            <li>Nosso Objetivo</li>
+            <li>Nossa Hístoria</li>
+        </ul>
+
+        <div class="buttons">
+            <app-button [size]="'medium'" [text]="'Registre-se'" (clickEvent)="RedirectToRegistry()" ></app-button>
+            <app-button [size]="'medium'" [text]="'Entrar'" (clickEvent)="RedirectToLogin()"></app-button>
+        </div>
+    </div>
+</header>

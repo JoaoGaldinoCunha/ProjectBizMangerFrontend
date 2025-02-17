@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'biz_manager' title`, () => {
+  it(`should have the 'Biz-Manager-Angular' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('biz_manager');
+    expect(app.title).toEqual('Biz-Manager-Angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, biz_manager');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Biz-Manager-Angular');
   });
 });

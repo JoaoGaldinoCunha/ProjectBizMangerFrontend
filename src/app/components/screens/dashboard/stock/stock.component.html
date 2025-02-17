@@ -1,0 +1,55 @@
+<section>
+    <div class="conteiner_stocks">
+      <button class="stock" [ngClass]="{'selected': selectedStock === stock.name}" (click)="selectStock(stock.name, stock.id)" *ngFor="let stock of dataAllStocks">
+        <h1>{{stock.name}}</h1>
+      </button>
+    </div>
+    <div class="general_container">
+      <div>
+        <button class="new_stock" (click)="openNewStockModal()" *ngIf="tipoUsuario=='Admin'">
+          <i class="fas fa-plus"></i> Novo Estoque
+        </button>
+      </div>
+      <div class="container">
+        <div class="header">
+          <h1>ESTOQUE</h1>
+          <button class="new_product" (click)="openNewProductModal()"><i class="fas fa-plus"></i> Novo Produto</button>
+        </div>
+        <div class="search_bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search by product name" [(ngModel)]="name" (input)="loadDataProductsByName()">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Detalhes do produto</th>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Descrição</th>
+              <th>Quantidade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of dataAllProducts">
+              <td (click)="openEditProductModal(product.id)"> <button class="button_see_more"><i class="fas fa-info-circle"></i> Ver detalhes</button> </td>
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.quantity}}</td>
+              <td>
+                <button class="buttons_status status_completed" (click)="openEditProductQuantityModal(product.id)"><i class="fas fa-edit"></i>Adicionar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <app-modal-new-stock></app-modal-new-stock>
+    <app-modal-stock-edit-product></app-modal-stock-edit-product>
+    <app-modal-stock-edit-product-quantity></app-modal-stock-edit-product-quantity>
+    <app-modal-stock-new-product></app-modal-stock-new-product>
+  </section>
+  
