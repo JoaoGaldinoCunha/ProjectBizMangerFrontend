@@ -1,59 +1,47 @@
-# BizManager
+# ProjectBizMangerFrontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+![Project](https://img.shields.io/badge/Project-Frontend-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Development server
+Este é o repositório do front-end do projeto ProjectBizManager, que é uma aplicação voltada para o gerenciamento de estoque. Este repositório funciona como um submódulo do repositório principal [ProjectBizManager](https://github.com/JoaoGaldinoCunha/ProjectBizManager.git).
 
-To start a local development server, run:
+## 🚀 Instalação
 
-```bash
-ng serve
-```
+Siga os passos abaixo para configurar e executar o projeto localmente.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Pré-requisitos
 
-## Code scaffolding
+- Node.js (v14 ou superior) ![Node](https://img.shields.io/badge/Node.js-v14+-brightgreen)
+- npm (v6 ou superior) ![npm](https://img.shields.io/badge/npm-v6+-red)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Passo a passo
 
-```bash
-ng generate component component-name
-```
+1. Clone o repositório do front-end:
+    ```bash
+    git clone https://github.com/JoaoGaldinoCunha/ProjectBizMangerFrontend.git
+    cd ProjectBizMangerFrontend
+    ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. Instale as dependências usando npm:
+    ```bash
+    npm install
+    ```
 
-```bash
-ng generate --help
-```
+3. Execute o projeto:
+    ```bash
+    npm start
+    ```
 
-## Building
+4. Acesse a aplicação no seu navegador:
+    Abra o navegador e vá para `http://localhost:3000`
 
-To build the project run:
+## 🤝 Contribuições
 
-```bash
-ng build
-```
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas e enviar pull requests.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Contribuidores Principais
 
-## Running unit tests
+- João Victor Galdino Cunha
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📜 Licença
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está licenciado sob a [MIT License](LICENSE).
