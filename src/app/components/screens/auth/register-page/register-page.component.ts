@@ -385,6 +385,9 @@ export class RegisterPageComponent {
       },
       error => {
         console.error('Registration error:', error);
+        setTimeout(() => {
+          this.RedirectToRegister();
+        }, 2000);
       }
     );
   }
@@ -396,5 +399,9 @@ export class RegisterPageComponent {
 
   RedirectToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  RedirectToRegister() {
+    this.router.navigate(['/register']);
   }
 }

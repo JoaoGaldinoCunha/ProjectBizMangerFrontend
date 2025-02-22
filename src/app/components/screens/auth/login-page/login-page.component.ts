@@ -111,6 +111,7 @@ export class LoginPageComponent {
           confirmButtonText: 'Ok',
           confirmButtonColor: '#3fc961',
         })
+        
       }
     );
   }

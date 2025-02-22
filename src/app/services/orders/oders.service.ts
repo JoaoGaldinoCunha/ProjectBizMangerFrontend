@@ -17,6 +17,7 @@ export class OrdersService {
   private readonly ApiUpdateOrder = `http://localhost:8080/order/update/`;
   private readonly ApiodersByIdCompanyAndOrder = `http://localhost:8080/order/odersByIdCompanyAndOrder/`;
   private readonly ApiDeleteOrderById=`http://localhost:8080/order/delete/`
+
   constructor(private cookieService: CookieService, private httpClient: HttpClient) { }
 
   LoadDataAllOrdersInCompany(): Observable<any> {
@@ -31,11 +32,12 @@ export class OrdersService {
 
   LoadDataOderById(orderId: number): Observable<any> {
     const token = this.cookieService.get('accessToken');
+    const companyId = this.cookieService.get('companyId');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-    return this.httpClient.get(`${this.ApiAllDataOderById}${orderId}`, { headers });
+    return this.httpClient.get(`${this.ApiAllDataOderById}${orderId}/${companyId}`, { headers });
   }
 
   LoadDataOderByIdCompanyAndOrder(companyId: number, orderId: number): Observable<any> {

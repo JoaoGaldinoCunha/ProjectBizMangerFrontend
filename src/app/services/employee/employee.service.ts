@@ -68,12 +68,14 @@ export class EmployeeService {
   }
 
   LoadDataEmployeeByName(name:string): Observable<any> {
+    const companyId = this.cookieService.get('companyId');
+
     const token = this.cookieService.get('accessToken');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-    return this.httpClient.get(`${this.ApiEmployeeByName}${name}`, { headers });
+    return this.httpClient.get(`${this.ApiEmployeeByName}${name}/${companyId}`, { headers });
   }
 
 }

@@ -14,7 +14,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient, private cookieService: CookieService) { }
 
   private readonly ApiProductStock = `http://localhost:8080/product/searchAllProductsByStockId/`;
-  private readonly ApiCreateProduct = `http://localhost:8080/product/create`;
+  private readonly ApiCreateProduct = `http://localhost:8080/product/create/`;
   private readonly ApiEditProduct = `http://localhost:8080/product/update/`;
   private readonly ApiEditProductQuatity = `http://localhost:8080/product/update/quantity`;
   private readonly ApiProductById = `http://localhost:8080/product/searchProductById/`;
@@ -59,14 +59,14 @@ export class ProductService {
   }
 
   createProduct(productData: TbProduct): Observable<TbProduct> {
+    const companyId = this.cookieService.get('companyId');
     const token = this.cookieService.get('accessToken');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     });
-    return this.httpClient.post<TbProduct>(this.ApiCreateProduct, productData, { headers });
+    return this.httpClient.post<TbProduct>(`${this.ApiCreateProduct}${companyId}`, productData, { headers });
   }
-
   editProduct(productData: EditProduct, productId: number): Observable<EditProduct> {
     const token = this.cookieService.get('accessToken');
     const headers = new HttpHeaders({

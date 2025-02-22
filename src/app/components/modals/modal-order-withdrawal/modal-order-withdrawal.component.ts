@@ -6,7 +6,7 @@ import { EmployeeService } from '../../../services/employee/employee.service';
 import { OrdersService } from '../../../services/orders/oders.service';
 import { OrderRequest } from '../../../models/order-request';
 import { CookieService } from 'ngx-cookie-service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-modal-order-withdrawal',
   imports: [FormsModule, CommonModule],
@@ -99,9 +99,19 @@ export class ModalOrderWithdrawalComponent implements OnInit {
     this.orderService.createOrder(orderData).subscribe(
       response => {
         console.log('Pedido criado com sucesso:', response);
+        
       },
       error => {
         console.error('Erro ao criar o pedido:', error);
+        Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: error.error.message,
+                  color: "#4e3629",
+                  background: "#fff",
+                  confirmButtonText: 'Ok',
+                  confirmButtonColor: '#3fc961',
+                })
       }
     );
     this.closeModal();

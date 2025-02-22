@@ -27,12 +27,18 @@ export class CompanyOverviewComponent implements OnInit {
 
   private updateInterval: any;
 
-
   ngOnInit(): void {
     this.loadDataAllEmployees();
     this.loadDataAllOrders();
     this.loadDataAllStocks();
+
+    this.updateInterval = setInterval(() => {
+      this.loadDataAllEmployees();
+      this.loadDataAllOrders();
+      this.loadDataAllStocks();
+    }, 2000); 
   }
+
 
   constructor(private employeesService: EmployeeService, private orderService: OrdersService, private stockService: StockService, private companyService: CompanyService, private cookieService: CookieService) { }
   @ViewChild(ModalEditStockComponent) modalEditStockComponent!: ModalEditStockComponent;
@@ -188,17 +194,5 @@ export class CompanyOverviewComponent implements OnInit {
       );
     }
 
-    startAutoUpdate() {
-      this.updateInterval = setInterval(() => {
-        this.loadDataAllEmployees();
-        this.loadDataAllOrders();
-        this.loadDataAllStocks();
-      }, 5000); 
-    }
-  
-    stopAutoUpdate() {
-      if (this.updateInterval) {
-        clearInterval(this.updateInterval);
-      }
-    }
+   
 }
